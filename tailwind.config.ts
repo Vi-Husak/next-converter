@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "banner-bgimage": "url('/img/banner.jpg')",
+        "banner-bgimage": "url('/img/banner.png')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
