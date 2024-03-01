@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Work_Sans } from "next/font/google";
 
-import LogoSVG from "../Icons/LogoSVG";
+import LogoSVG from "../SVGIcons/LogoSVG";
 
 const workSansLogoName = Work_Sans({ weight: "700", subsets: ["latin"] });
 
