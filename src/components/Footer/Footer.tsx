@@ -5,8 +5,8 @@ import Navigation from "./Navigation";
 import ContactPhoneItem from "./ContactPhoneItem";
 import Socials from "./Socials";
 
-import SmartphoneSVG from "@/components/Icons/SmartphoneSVG";
-import PhoneSVG from "@/components/Icons/PhoneSVG";
+import SmartphoneSVG from "@/components/SVGIcons/SmartphoneSVG";
+import PhoneSVG from "@/components/SVGIcons/PhoneSVG";
 
 export default function Footer() {
   return (
