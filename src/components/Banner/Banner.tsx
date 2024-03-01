@@ -16,7 +16,7 @@ export default function Banner() {
           </Button>
         </div>
         <Image
-          src="/standard-mastercard-card.jpg"
+          src="/img/standard-mastercard-card.png"
           alt=""
           width={341}
           height={216}

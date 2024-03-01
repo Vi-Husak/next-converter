@@ -17,7 +17,7 @@ export default function Home() {
           </Button>
         </div>
         <Image
-          src="/img01.png"
+          src="/img/img01.png"
           width={436}
           height={314}
           alt=""
