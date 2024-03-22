@@ -23,7 +23,11 @@ const config: Config = {
         accent: "#2c36f2",
         accentLight: "#e0e1ea",
         light: "#f6f7ff",
-        dark: "#1f1e25",
+        dark: {
+          DEFAULT: "#1f1e25",
+          100: "#1F1E3F",
+        },
+        middlegrey: "#C1C2CA",
       },
       padding: {
         "25": "6.25rem",

@@ -1,13 +1,14 @@
 import Image from "next/image";
 
 import Button from "@/components/Button/Button";
+import SubTitle from "@/components/Heading/SubTitle";
 
 export default function Home() {
   return (
     <section className="bg-white">
       <div className="max-w-[866px] m-auto py-28 flex justify-between gap-12 items-center">
         <div className="flex flex-col gap-7 items-start">
-          <h2 className="font-bold text-4xl text-dark">Конвертер валют</h2>
+          <SubTitle>Конвертер валют</SubTitle>
           <p className="text-primary text-xl">
             Переважна діяльність банківської групи за останні чотири звітні
             квартали становить 50 і більше відсотків.
