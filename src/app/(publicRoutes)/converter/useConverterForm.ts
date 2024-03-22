@@ -6,6 +6,7 @@ import {
   ICurrency,
 } from "@/server-actions/getData";
 import { getFormattedDate } from "@/utils/getFormattedDate";
+import { useConvertHistoryStore } from "@/stores/converter-store";
 
 export default function useConverterForm() {
   const today = getFormattedDate();
@@ -25,6 +26,8 @@ export default function useConverterForm() {
 
   const oldExchangeAmountInputValue = useRef(0);
   const oldBuyAmountInputValue = useRef(0);
+
+  const addToHistory = useConvertHistoryStore((state) => state.addToHistory);
 
   useEffect(() => {
     async function getCurrencies() {
@@ -180,10 +183,25 @@ export default function useConverterForm() {
     });
   };
 
-  const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // TODO: (task3) Add result to history array
-  }, []);
+  const handleSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+
+      const fromCurrency = selectedCurrency?.short_code || "";
+      const toCurrency = selectedBuyCurrency?.short_code || "";
+      const fromAmount = +exchangeAmountInputRef.current!.value || 0;
+      const toAmount = +buyAmountInputRef.current!.value || 0;
+
+      addToHistory({
+        date: today,
+        fromCurrency,
+        fromAmount,
+        toCurrency,
+        toAmount,
+      });
+    },
+    [selectedBuyCurrency, selectedCurrency, today, addToHistory]
+  );
 
   return {
     currencies,
