@@ -38,13 +38,14 @@ export default function ConverterForm() {
               type="number"
               id="exchangeAmount"
               defaultValue={1000}
+              step="any"
               ref={exchangeAmountInputRef}
-              onChange={(e) => handleExchangeAmountChange(e)}
+              onChange={handleExchangeAmountChange}
             />
 
             <Select
               value={selectedCurrency?.short_code}
-              onChange={(e) => handleSelectedCurrencyChange(e)}
+              onChange={handleSelectedCurrencyChange}
             >
               {currencies.map(({ short_code, name }) => (
                 <option key={short_code} value={short_code} data-name={name}>
@@ -59,7 +60,7 @@ export default function ConverterForm() {
           value={selectedDate}
           max={today}
           min={sevenDaysBeforeToday}
-          onChange={(e) => handleSelectedDateChange(e)}
+          onChange={handleSelectedDateChange}
         />
       </div>
 
@@ -74,12 +75,13 @@ export default function ConverterForm() {
             <Input
               type="number"
               id="buyAmount"
+              step="any"
               ref={buyAmountInputRef}
-              onChange={(e) => handleBuyAmountChange(e)}
+              onChange={handleBuyAmountChange}
             />
             <Select
               value={selectedBuyCurrency?.short_code}
-              onChange={(e) => handleSelectedBuyCurrencyChange(e)}
+              onChange={handleSelectedBuyCurrencyChange}
             >
               {currencies.map(({ short_code, name }) => (
                 <option key={short_code} value={short_code} data-name={name}>
